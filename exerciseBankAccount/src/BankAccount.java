@@ -10,12 +10,34 @@ public class BankAccount {
 *   but not allow the withdrawal (cancelamento) to complete if their are insufficient funds
 *   You will want to create various code in the Main class to confirm your code working   */
 
-    private int accountNumber;
+    private int accountNumber; // usar String
     private double balance;
     private String customerName;
     private String email;
     private String phone;
+    public BankAccount() {
+        System.out.println("Empty constructor called");
+    }
+    public BankAccount(int accountNumber, double balance, String customerName, String email, String phone) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phone = phone;
+    }
+    public void deposit(double deposit) {
+        this.balance += deposit;
+    }
+    public void withdraw(double withdraw) {
+        if (this.balance - withdraw < 0) {
+            System.out.println("Insufficient funds");
+        }else {
 
+            this.balance -= withdraw;
+            System.out.println("Balance - withdraw = " + this.balance);
+
+        }
+    }
     public int getAccountNumber() {
         return accountNumber;
     }
@@ -55,7 +77,6 @@ public class BankAccount {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public void deposit(double deposit) {
-        balance += deposit;
-    }
+
+
 }
