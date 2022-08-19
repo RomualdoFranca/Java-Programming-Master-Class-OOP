@@ -54,7 +54,7 @@ NOTE: In total, you have to write 5 methods and 2 constructors.*/
     }
 
     public void setWidth(double width) {
-        if (this.width < 0) {
+        if (width < 0) {
             width = 0;
         }
         this.width = width;
